@@ -1,0 +1,230 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #333;
+    color: #000000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #6e0303;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-weight: 700;
+}
+
+nav ul.sidebar {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul.sidebar li {
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul.sidebar li:hover,
+nav ul.sidebar li.active {
+    background-color: #d34a4a;
+    color: white;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+#main-search {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1.5px solid #d34a4a;
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+    gap: 15px;
+}
+
+.music-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 7px rgb(0 0 0 / 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.music-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgb(0 0 0 / 0.15);
+}
+
+.music-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.music-info {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.music-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #d34a4a;
+}
+
+.music-info p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.card-actions button {
+    background-color: #d34a4a;
+    border: none;
+    padding: 6px 12px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.card-actions button:hover {
+    background-color: #d34a4a;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #d34a4a;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="url"],
+form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid #d34a4a;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #d34a4a;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #d34a4a;
+}
+
+.btn-primary {
+    background-color: #d34a4a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #d34a4a;
+}
+
+.btn-danger {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #ab000d;
+}
+
+#upload-message,
+#auth-message {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #d34a4a;
+}
+
+@media (max-width: 650px) {
+    nav ul.sidebar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .music-grid {
+        grid-template-columns: repeat(auto-fill,minmax(140px,1fr));
+    }
+}

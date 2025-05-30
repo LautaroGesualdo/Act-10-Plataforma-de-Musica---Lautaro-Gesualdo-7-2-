@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plataforma de Música - Streaming</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+    <h1>Music Stream</h1>
+    <nav>
+        <ul class="sidebar">
+            <li data-section="home" class="active">Inicio</li>
+            <li data-section="upload">Subir Música</li>
+            <li data-section="playlists">Playlists</li>
+            <li data-section="profile">Perfil</li>
+            <li data-section="login">Login / Registro</li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- SECCIÓN INICIO: LISTA DE CANCIONES -->
+    <section data-section="home" class="section active">
+        <input type="text" id="main-search" placeholder="Buscar canción o artista..." />
+        <div id="music-grid" class="music-grid"></div>
+    </section>
+
+    <!-- SECCIÓN SUBIR MÚSICA -->
+    <section data-section="upload" class="section">
+        <h2>Subir Música</h2>
+        <form id="upload-form">
+            <label for="song-title">Título:</label>
+            <input type="text" id="song-title" required />
+
+            <label for="song-artist">Artista:</label>
+            <input type="text" id="song-artist" required />
+
+            <label for="song-image">Imagen (URL):</label>
+            <input type="url" id="song-image" placeholder="https://..." />
+
+            <label for="song-file">Archivo MP3:</label>
+            <input type="file" id="song-file" accept="audio/mp3" required />
+
+            <button type="submit">Subir Canción</button>
+        </form>
+        <div id="upload-message"></div>
+    </section>
+
+    <!-- SECCIÓN PLAYLISTS -->
+    <section data-section="playlists" class="section">
+        <h2>Playlists</h2>
+        <button id="create-playlist-btn" class="btn-primary">Crear Nueva Playlist</button>
+        <div id="playlists-grid" class="music-grid"></div>
+    </section>
+
+    <!-- SECCIÓN PERFIL -->
+    <section data-section="profile" class="section">
+        <h2>Perfil de Usuario</h2>
+        <div id="profile-info">
+            <p>No has iniciado sesión.</p>
+        </div>
+        <button id="logout-btn" class="btn-danger" style="display:none;">Cerrar sesión</button>
+    </section>
+
+    <!-- SECCIÓN LOGIN / REGISTRO -->
+    <section data-section="login" class="section">
+        <h2>Login</h2>
+        <form id="login-form" class="auth-form">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" required />
+
+            <label for="login-password">Contraseña:</label>
+            <input type="password" id="login-password" required />
+
+            <button type="submit" class="btn-primary">Iniciar Sesión</button>
+        </form>
+
+        <h2>Registro</h2>
+        <form id="register-form" class="auth-form">
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" required />
+
+            <label for="register-password">Contraseña:</label>
+            <input type="password" id="register-password" required />
+
+            <label for="register-password2">Repetir Contraseña:</label>
+            <input type="password" id="register-password2" required />
+
+            <button type="submit" class="btn-primary">Registrarse</button>
+        </form>
+        <div id="auth-message"></div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
